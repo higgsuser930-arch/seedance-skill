@@ -1,66 +1,129 @@
 # Seedance Skill
 
-> Comprehensive Claude Code skill for ByteDance's Seedance 2.0/2.5 AI video generation model.
+<p align="center">
+  <img src="https://img.shields.io/badge/Seedance-2.0%20%7C%202.5-blue?style=flat-square" alt="Seedance 2.0 | 2.5">
+  <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="License: MIT">
+  <img src="https://img.shields.io/badge/platform-Claude%20Code-purple?style=flat-square" alt="Platform: Claude Code">
+</p>
 
-Covers prompt engineering, camera direction, lighting, multi-shot storytelling, API integration, and troubleshooting — across all Seedance surfaces (Dreamina, Jimeng, CapCut, Doubao, Fal AI, Volcengine, Runway, and more).
+A comprehensive Claude Code skill for ByteDance's Seedance 2.0/2.5 AI video generation model. Consolidates the best practices, prompting techniques, and operational knowledge from 6 community repositories into a single, meticulously structured skill file.
 
-## What's Inside
+## Table of Contents
 
-- **7 modes**: T2V, I2V, V2V, R2V, FLF2V, Edit, Extend — each with mode-specific prompting rules
-- **@ reference system**: role assignment, file allocation strategy, common mistakes
-- **6D prompt formula**: Subject + Action + Scene + Camera + Lighting + Timing
-- **Camera vocabulary**: 14 movements, compound moves, shot-size pairings
-- **Lighting keywords**: 11 styles — the single biggest lever on output quality
-- **7 scene templates**: product ads, character narrative, motion transfer, multi-shot, one-take, beat-matching, lip-sync
-- **Multi-shot sequence workflow**: clip budgeting, continuity tracking, canonical state
-- **Anti-slop checklist**: quality gates before delivering any prompt
-- **Troubleshooting**: 10 common issues with root causes and fixes
-- **Pro tips**: 13 battle-tested best practices from the community
-- **2.0 vs 2.5 comparison**: input limits, features, resolution, formats
+- [Features](#features)
+- [Quick Start](#quick-start)
+- [Installation](#installation)
+- [Usage](#usage)
+- [What's Inside](#whats-inside)
+- [Example Output](#example-output)
+- [Acknowledgments](#acknowledgments)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Install
+## Features
 
-### Option A: Via `npx skills` (recommended)
+| Category | Coverage |
+|----------|----------|
+| **Generation Modes** | T2V, I2V, V2V, R2V, FLF2V, Edit, Extend — each with tailored prompting rules |
+| **Platform Support** | Dreamina, Jimeng, CapCut, Doubao, Fal AI, Volcengine/Ark, Runway, Replicate, MuAPI |
+| **@ Reference System** | Syntax, role assignment, file allocation strategies, and common mistakes |
+| **Prompt Framework** | 6D formula with subject, action, scene, camera, lighting, and timing |
+| **Camera Direction** | 14 camera movements, compound sequences, shot-size pairings |
+| **Lighting Design** | 11 lighting styles — the single most impactful lever on output quality |
+| **Scene Templates** | 7 ready-to-use templates for products, characters, motion, multi-shot, and more |
+| **Sequence Workflow** | Multi-clip continuity tracking, canonical state management, clip budgeting |
+| **Quality Gates** | Anti-slop checklist, visibility tests, directing coherence rules |
+| **Troubleshooting** | 10 common problems with root-cause analysis and fixes |
+| **Version Comparison** | Detailed 2.0 vs 2.5 differences across all input/output dimensions |
+
+## Quick Start
 
 ```bash
-npx skills add jialei/seedance-skill
+npx skills add jeurtr/seedance-skill
 ```
 
-### Option B: Manual copy
-
-```bash
-# English
-cp SKILL.md ~/.claude/skills/seedance/SKILL.md
-
-# Or to your project
-cp SKILL.md .claude/skills/seedance/SKILL.md
-```
-
-### Option C: Git clone
-
-```bash
-git clone https://github.com/jialei/seedance-skill.git
-cp seedance-skill/SKILL.md ~/.claude/skills/seedance/SKILL.md
-```
-
-## Usage
-
-In Claude Code, invoke the skill:
-
-```
-/seedance
-```
-
-Or just describe what you want to create:
+Then ask Claude Code:
 
 ```
 Generate a 10-second product promo video for a black leather handbag.
 I have 3 reference images of the product.
 ```
 
-## Quick Example
+The skill activates automatically — no `/seedance` invocation needed.
 
-**Prompt written by this skill:**
+## Installation
+
+### Via npx (recommended)
+
+```bash
+npx skills add jeurtr/seedance-skill
+```
+
+### Manual copy
+
+```bash
+# User-level (available in all projects)
+mkdir -p ~/.claude/skills/seedance
+cp SKILL.md ~/.claude/skills/seedance/SKILL.md
+
+# Project-level
+mkdir -p .claude/skills/seedance
+cp SKILL.md .claude/skills/seedance/SKILL.md
+```
+
+### Git clone
+
+```bash
+git clone git@github.com:jeurtr/seedance-skill.git
+cp seedance-skill/SKILL.md ~/.claude/skills/seedance/SKILL.md
+```
+
+## Usage
+
+Describe what you want to create in plain language. The skill handles prompt structure, camera vocabulary, lighting, and constraints internally.
+
+```
+/seedance 帮我写一个15秒的产品广告提示词，产品是黑色皮质手提包
+```
+
+```
+Create a cinematic short: a man walks through a rainy Tokyo alley at night,
+camera tracking alongside him, neon reflections in puddles, 8 seconds.
+```
+
+For best results, mention:
+
+1. **What you want** — video type, mood, duration
+2. **What you have** — reference images, videos, audio files
+3. **Any constraints** — aspect ratio, platform, budget
+
+## What's Inside
+
+```
+SKILL.md (467 lines, 19 KB)
+├── Soul — Three governing principles for every interaction
+├── Quick Start — 6-step intake workflow
+├── Platform Access — Endpoints and access paths for all surfaces
+├── Input Constraints — 2.0 and 2.5 limits, formats, output specs
+├── Modes — T2V, I2V, V2V, R2V, FLF2V, Edit, Extend with per-mode rules
+├── @ Reference System — Syntax, role assignment, allocation table
+├── Core Prompt Formula — 6D framework with worked examples
+├── Camera Vocabulary — 14 movements, compound moves, shot pairings
+├── Lighting Keywords — 11 styles (the single biggest quality lever)
+├── Visual Style Anchors — Concrete replacements for vague adjectives
+├── 7 Scene Templates — Product ads, narrative, motion transfer, multi-shot,
+│   long take, beat-matching, lip-sync
+├── Multi-Shot Sequence Workflow — Continuity tracking and clip budgeting
+├── Anti-Slop Checklist — Quality gates before delivering any prompt
+├── Troubleshooting — 10 issues with root causes, fixes, and retake protocol
+├── 2.0 vs 2.5 Comparison — Feature-by-feature breakdown
+├── Pro Tips — 13 community-vetted best practices
+└── Quick Reference — Compressed format for character-limited surfaces
+```
+
+## Example Output
+
+Given a product photo as `@Image1`, the skill produces prompts like:
 
 ```
 @Image1 (product hero shot) on a minimalist pedestal against pure black background.
@@ -70,19 +133,37 @@ refractions floating depth. Clean commercial tabletop, controlled reflections,
 no clutter. Gimbal-smooth motion. 4K sharp details.
 ```
 
-## Sources
+## Acknowledgments
 
-This skill consolidates content from 6 community repositories:
+This skill synthesizes work from the following community projects:
 
-| Repository | Stars | Core Contribution |
-|------------|-------|-------------------|
-| [Emily2040/seedance-2.0](https://github.com/Emily2040/seedance-2.0) | — | Operating loop, soul principles, gates, sequence management |
-| [dexhunter/seedance2-skill](https://github.com/dexhunter/seedance2-skill) | 2.8k | @ reference system, constraints, capability patterns |
-| [Anil-matcha/awesome-seedance-2.5-api-prompts](https://github.com/Anil-matcha/awesome-seedance-2.5-api-prompts) | 258 | API reference, 2.5 features, camera vocab, shot scripts |
-| [makesupday/Awesome-Seedance-2.0-Prompt-and-Examples](https://github.com/makesupday/Awesome-Seedance-2.0-Prompt-and-Examples) | — | Curated prompts, troubleshooting, community pro tips |
-| [robonuggets/seedance-skill](https://github.com/robonuggets/seedance-skill) | 90 | Liquid glass motion graphics, Fal AI integration |
-| [rich5000/seedance-prompt-guide](https://github.com/rich5000/seedance-prompt-guide) | 18 | 7 scenario templates, Chinese + English |
+| Repository | Key Contribution |
+|------------|-----------------|
+| [Emily2040/seedance-2.0](https://github.com/Emily2040/seedance-2.0) | Operating loop architecture, soul principles, sequence gate system |
+| [dexhunter/seedance2-skill](https://github.com/dexhunter/seedance2-skill) | @ reference system, input constraints, mode-specific patterns |
+| [Anil-matcha/awesome-seedance-2.5-api-prompts](https://github.com/Anil-matcha/awesome-seedance-2.5-api-prompts) | API reference, 2.5 feature comparison, shot script format |
+| [makesupday/Awesome-Seedance-2.0](https://github.com/makesupday/Awesome-Seedance-2.0-Prompt-and-Examples) | Curated prompt collection, troubleshooting matrix |
+| [robonuggets/seedance-skill](https://github.com/robonuggets/seedance-skill) | Liquid glass motion graphics patterns, Fal AI integration |
+| [rich5000/seedance-prompt-guide](https://github.com/rich5000/seedance-prompt-guide) | Scenario templates, Chinese-English bilingual coverage |
+
+## Contributing
+
+Contributions are welcome. If you have:
+
+- A new scene template that produced consistently good results
+- A camera or lighting keyword the model responds well to
+- A troubleshooting fix for a recurring issue
+- Translations to additional languages
+
+Please open a pull request or issue.
+
+### Structure
+
+- `SKILL.md` — English skill file
+- `zh/SKILL.md` — Chinese skill file
+- Keep the same section structure across translations
+- Follow the existing format: concise tables, concrete examples, actionable rules
 
 ## License
 
-MIT
+MIT © [jeurtr](https://github.com/jeurtr)
