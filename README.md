@@ -39,7 +39,7 @@ A comprehensive Claude Code skill for ByteDance's Seedance 2.0/2.5 AI video gene
 ## Quick Start
 
 ```bash
-npx skills add jeurtr/seedance-skill
+npx skills add jeurtr/seedance-skill --agent claude-code -g
 ```
 
 Then ask Claude Code:
@@ -53,13 +53,17 @@ The skill activates automatically — no `/seedance` invocation needed.
 
 ## Installation
 
-### Via npx (recommended)
+### Via npx skills CLI
+
+The [`skills`](https://www.npmjs.com/package/skills) CLI (by Vercel Labs) is the standard way to install agent skills:
 
 ```bash
-npx skills add jeurtr/seedance-skill
+npx skills add jeurtr/seedance-skill --agent claude-code -g
 ```
 
-### Manual copy
+> **Note:** The `--agent claude-code` flag ensures the skill lands in `~/.claude/skills/` where Claude Code looks for it. Without this flag, skills may be installed to `~/.agents/skills/` — a different directory Claude Code does not scan.
+
+### Manual copy (always works)
 
 ```bash
 # User-level (available in all projects)
@@ -75,6 +79,7 @@ cp SKILL.md .claude/skills/seedance/SKILL.md
 
 ```bash
 git clone git@github.com:jeurtr/seedance-skill.git
+mkdir -p ~/.claude/skills/seedance
 cp seedance-skill/SKILL.md ~/.claude/skills/seedance/SKILL.md
 ```
 
