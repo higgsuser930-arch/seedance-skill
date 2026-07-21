@@ -55,24 +55,36 @@ The skill activates automatically — no `/seedance` invocation needed.
 
 ### Via npx skills CLI
 
-The [`skills`](https://www.npmjs.com/package/skills) CLI (by Vercel Labs) is the standard way to install agent skills:
+The [`skills`](https://www.npmjs.com/package/skills) CLI (by Vercel Labs) is the standard way to install agent skills across multiple coding agents:
 
 ```bash
+# Install to all detected agents (default)
+npx skills add jeurtr/seedance-skill -g
+
+# Target a specific agent
 npx skills add jeurtr/seedance-skill --agent claude-code -g
+npx skills add jeurtr/seedance-skill --agent codex -g
+npx skills add jeurtr/seedance-skill --agent opencode -g
 ```
 
-> **Note:** The `--agent claude-code` flag ensures the skill lands in `~/.claude/skills/` where Claude Code looks for it. Without this flag, skills may be installed to `~/.agents/skills/` — a different directory Claude Code does not scan.
+The `skills` CLI supports Claude Code, Codex, OpenCode, Cursor, Windsurf, Copilot, Cline, and 68+ other agents. By default it installs to `~/.agents/skills/` (the shared agent skills directory), with per-agent routing handled automatically.
+
+> **Claude Code users:** Claude Code resolves skills from `~/.claude/skills/`, not `~/.agents/skills/`. Use `--agent claude-code` to route correctly, or copy manually.
 
 ### Manual copy (always works)
 
 ```bash
-# User-level (available in all projects)
+# Claude Code (user-level)
 mkdir -p ~/.claude/skills/seedance
 cp SKILL.md ~/.claude/skills/seedance/SKILL.md
 
-# Project-level
+# Claude Code (project-level)
 mkdir -p .claude/skills/seedance
 cp SKILL.md .claude/skills/seedance/SKILL.md
+
+# Codex / OpenCode
+mkdir -p ~/.agents/skills/seedance
+cp SKILL.md ~/.agents/skills/seedance/SKILL.md
 ```
 
 ### Git clone
@@ -81,6 +93,7 @@ cp SKILL.md .claude/skills/seedance/SKILL.md
 git clone git@github.com:jeurtr/seedance-skill.git
 mkdir -p ~/.claude/skills/seedance
 cp seedance-skill/SKILL.md ~/.claude/skills/seedance/SKILL.md
+```
 ```
 
 ## Usage
