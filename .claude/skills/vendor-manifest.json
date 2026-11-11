@@ -1,0 +1,181 @@
+{
+ "note": "sha256 of every vendored file as copied from upstream; verify_skills.py fails if one changes",
+ "skills": {
+  "ai-video-storyboard": {
+   "source": "https://github.com/cajias/agentic-video-skills",
+   "commit": "204cefd08bbb87fd4681f1f2b0dccbc444a978c1",
+   "license": "MIT stated in SKILL.md, no license file; upstream aicontentskills/ai-video-storyboard-skill",
+   "files": {
+    "ATTRIBUTION.md": "c5944a37e65c2b39851f150e7053533286aa5e98a0332557a1f08ebb2fcc2a75",
+    "NOTICE.agentic-video-skills": "2050fa5234221525895ec1ca6d6167c29448b2fccc9c721743f9b6997e03be35",
+    "SKILL.md": "030662a226bd3e4ba0f8bbdf088b0fe1ebbb3805c586a856616a3f4c372a5eff",
+    "evals/evals.json": "c7c43a9ecf481d83d6ecbba973b70e3adcf3bce7b3e5c33ad7f1b5557051fc1a",
+    "examples/tiktok-reel-30s-coffee.md": "6e64bccd606f66d418d483da082f3052a2709a8d3e60c8a315bec8fcfa36dc51"
+   }
+  },
+  "assembly-and-delivery": {
+   "source": "https://github.com/svenkatreddy/universal-video-skills",
+   "commit": "0c384d395290eaebf416e4bcfc4a7bb19b20aaac",
+   "license": "MIT",
+   "files": {
+    "LICENSE": "dbb3157c8ee4243696d46fc402a13aee1a70b88079a44de41ee133e027625517",
+    "SKILL.md": "ef26ebd7b00685579c1525e77b9b19ca6cc34a830f1210a82a662ca7f3344929",
+    "references/exports.md": "ba0ea5a858f1fe97b4d3d13eee89b69fb202af0d49929fcf2e7594e797adea4d",
+    "references/stitching.md": "9d93378003693473f1c290a120ba607862398a1a8dbfcdf6324f24ab554efeff",
+    "scripts/concat.py": "a80b1d8874684a2a5dac7e691176fc00b625ff7ae02f10a14863c20709501892"
+   }
+  },
+  "character-consistency": {
+   "source": "https://github.com/svenkatreddy/universal-video-skills",
+   "commit": "0c384d395290eaebf416e4bcfc4a7bb19b20aaac",
+   "license": "MIT",
+   "files": {
+    "LICENSE": "dbb3157c8ee4243696d46fc402a13aee1a70b88079a44de41ee133e027625517",
+    "SKILL.md": "5e75c9e89bf62c75a096bfb701c7809121f7f5c3ec4a5cf4402a9bc6b1bcdc37",
+    "references/asset-registry.md": "587402a91c5088c3c129f16f6ad7bf33b7f88cef4b10d414e4cf0d16344a8194",
+    "references/reference-sheets.md": "5dab8b2d2fa812b140be6eca356cc79cd216bb2b569da8f17e069895a8fac8ba"
+   }
+  },
+  "cinematic-direction": {
+   "source": "https://github.com/svenkatreddy/universal-video-skills",
+   "commit": "0c384d395290eaebf416e4bcfc4a7bb19b20aaac",
+   "license": "MIT",
+   "files": {
+    "LICENSE": "dbb3157c8ee4243696d46fc402a13aee1a70b88079a44de41ee133e027625517",
+    "SKILL.md": "37920e5fb04baf5715f0ea8b9733a18ebcb3588b95f2d40c564024249718858e",
+    "references/camera-language.md": "432166db94268d96e2e7773a97e794f214708b080e8c83aa6a9ce9f38b638e23",
+    "references/lighting-and-color.md": "ec00ffdd5162986262ca95cf63246825efd2f255d70f987367667842987476bd",
+    "references/style-lenses.md": "430cd0ca538206f93a3f1b249aed6b2436fefeabcace2c1e1ec46f12a52293a0"
+   }
+  },
+  "cinematic-director": {
+   "source": "https://github.com/cajias/agentic-video-skills",
+   "commit": "204cefd08bbb87fd4681f1f2b0dccbc444a978c1",
+   "license": "MIT; upstream wuwangzhang1216/DirectorSKILL",
+   "files": {
+    "LICENSE": "63673a513b8c68736ef1a3652159e24f7b3329bacd89b4dfc078e0bd2af46977",
+    "NOTICE.agentic-video-skills": "2050fa5234221525895ec1ca6d6167c29448b2fccc9c721743f9b6997e03be35",
+    "SKILL.md": "abbeea208a2c10030b57ea3cb739d7d7dda67b3f4a0db2cb0ad900eb9e11a88e",
+    "assets/keyframe-prompt-template.md": "57759e5fa07abc30ef9295b5ca791b9af3dec4ade4e1719a0556dfd37be43f66",
+    "assets/qc-checklist.md": "0c93fa40c8d1a0e738585878394512436c0780b3f4e907956a5cb516773a9bb0",
+    "assets/shot-plan-template.md": "fb1d185007070b58162e12c2d7c7be3838b99c8cf44a0bf4fc0fc16d9d846157",
+    "assets/video-prompt-template.md": "dab5d1c6b64ccbd749121d9bf7a9bf25017c71fad03c08391ec916e2c9b5f191",
+    "evals/evals.json": "716b90a18711502a0b0ab6a8a62f2bdd4b25147fe27129742b54e520d4163825",
+    "references/ai-video-tool-adapters.md": "c3dc59fdb323a2702489f332cd5ae399a39cf41c50929acd82f2119f5ca5fab8",
+    "references/cinematic-language.md": "e71139240de4ddde2d3906d7a4831c81e20228a05cb983ece55d42a95c65437f",
+    "references/continuity-bible.md": "4c4770e7ce755710b2e409ea2a7362092e92f7b841968103e9dd31be435efb85",
+    "references/director_styles/01_spielberg.md": "daf467b9528e161abdb7bf5573b01d2594e0a43c1a96dd41eb93989337e36ec0",
+    "references/director_styles/02_hitchcock.md": "8ebfe640c20ffb19d939e1fdefa65e528a20cf7da5c292d4103237b8ff63d084",
+    "references/director_styles/03_kubrick.md": "a68dd6ac706e8e2cb34823fe81d5e2c92856e413ababa6ede75686e0c47c60bc",
+    "references/director_styles/04_kurosawa.md": "3e70280437e3287cb0c3e42568810bab7e922d8dd67159bc252078f20f518063",
+    "references/director_styles/05_scorsese.md": "77e9839e6123ed04cf79afabcb4ef8bf6b68a0b6971a0ed0939ad3c1f63404c1",
+    "references/director_styles/06_fellini.md": "7e38fab96a3d95f41f1eb162bb7690ab082011d5125480900b6da38e74044235",
+    "references/director_styles/07_bergman.md": "9b8a6834ba0d16722b2d30cf6ea41f77fc8a1bace0938b59657a2f2febf81f7a",
+    "references/director_styles/08_tarkovsky.md": "946a198bfbb71e969a31d7a5aa81e81a61cb534c6ead333e775d47a322065f6c",
+    "references/director_styles/09_wong_kar_wai.md": "b9ccd1bf318beb8f5f12b983b3872bef880846ccfd1b9ef0156483c6e4db0e34",
+    "references/director_styles/10_nolan.md": "31196e0f5b3724cc168e1a236fc87ffc788ab149b3b85805d39f339de2e42a53",
+    "references/director_styles/11_villeneuve.md": "7cb2709244cbf8e74441406db2426b568c7e0cd10c65d3ca4592db6f36df4c1f",
+    "references/director_styles/12_fincher.md": "c04f5c426d76ab254fff4e3de634859144c7ae40afbaa503e936aab0ab68911b",
+    "references/director_styles/13_refn.md": "6f0f773f7b96b7775d2179694cc4c66afc7661265e51af67227212d1d64f09df",
+    "references/director_styles/14_bi_gan.md": "2baf48a1a4a5bda9318af1895c1ca08e877b58bc232546dc2e8fd958bacf74bf",
+    "references/director_styles/README.md": "7d02c2a32ab74aab0ab6b04739a309ac680383b3fa3b75160721020fad900868",
+    "references/director_styles/example_comparisons.md": "ee355d25652af2bdb7661bcd22733923373956339effbf2b2decbfd8b0d149b5"
+   }
+  },
+  "dialogue-and-audio": {
+   "source": "https://github.com/svenkatreddy/universal-video-skills",
+   "commit": "0c384d395290eaebf416e4bcfc4a7bb19b20aaac",
+   "license": "MIT",
+   "files": {
+    "LICENSE": "dbb3157c8ee4243696d46fc402a13aee1a70b88079a44de41ee133e027625517",
+    "SKILL.md": "d604109ef4de3208bf3c7bff0d3e3003a4e3389a0c6f8c997d2e324a7149d2fa",
+    "references/mix.md": "a0d9da71ac50bc441aef2e550666780b73512a3af04626f2ea7b5c34b44bb20d",
+    "references/subtitles.md": "c1b1e9c75e7aa44a5decbe2c7fba0d9cccb8b98e77dfa18215d94a9fb7fe2cbc",
+    "references/voiceover.md": "3485d740f6bb99507a1e9628e35bb6783241cdf086b0d6ead17fe932d9387cda"
+   }
+  },
+  "model-adapters": {
+   "source": "https://github.com/svenkatreddy/universal-video-skills",
+   "commit": "0c384d395290eaebf416e4bcfc4a7bb19b20aaac",
+   "license": "MIT",
+   "files": {
+    "LICENSE": "dbb3157c8ee4243696d46fc402a13aee1a70b88079a44de41ee133e027625517",
+    "SKILL.md": "8d33b93027011d3841a515b2f47d03f202ec84d16ff53d192a783d667b505299",
+    "references/adapter-template.md": "7615737f0f7a15156e28705b5539bee6ea3e09f9b55548724153c9b74339a779",
+    "references/gemini-veo.md": "eb48bec9a3dd53c967bbde4ce1b4e659f3f132791816855859269bc46bc0e119",
+    "references/hailuo.md": "4f95973df50fd33c0f487a93baa4741e1a966a59ab226f966b9a363e2342a20b",
+    "references/kling.md": "40ddef1e1f8b8abbfd67d5766eff2af01c58f589925ca3f5d2d1d1304750a84a",
+    "references/luma.md": "8513b6eaf195a7127a9739eac53a490eeff16314d287de6cf4779eb3a03a857c",
+    "references/muse.md": "b9ebe0326ecde395ca95546cf8a6faa0f8f245cbec753b90cfa559ce375d04b2",
+    "references/pika.md": "053815cf9b83b80b25bc62913817761284ca714ee8293ced94e1400fc6153d97",
+    "references/runway.md": "a12da666aff1fd538e5cc9913dca0993d3f6691733f21c837b8e4aed36527c98",
+    "references/sora.md": "d4f63879f9ef3f4e59a88844f05c6c9502916f6720da34514a3cf05ed3e11c6e"
+   }
+  },
+  "seedance": {
+   "source": "https://github.com/jeurtr/seedance-skill",
+   "commit": "9b12d582d6a18702edf399f3e4440d948e479d82",
+   "license": "MIT",
+   "files": {
+    "LICENSE": "2f6d2b000ad0aaf7d2b713ceaf01a49d7ab36bd26afb2b7034cadb33aea6cc79",
+    "SKILL.md": "d9b097539a1da83fe06c626cf1f680cf8845bb5a9f5cef14af7488fea28d65ec",
+    "zh/SKILL.md": "3dfd8bb04a31db901b2160cb093dd52e88d9df0db9e0fbe37cdcfc0f29a4632a"
+   }
+  },
+  "seedance-forge": {
+   "source": "https://github.com/StreetJammer/seedance-forge",
+   "commit": "90962bd25d31c7cbd6c8ae5cbae6acd4d3a651eb",
+   "license": "MIT (package.json)",
+   "files": {
+    "SKILL.md": "692a45a052403d3b9fe1bff933979e75cf0eb53e049d4de0e81f00ceb40c3254",
+    "references/curated-examples.md": "1b867e4662ee53543b5da0e07757ee176bc65a612f66e3686280110dc738c3ed",
+    "references/seedance-prompts.csv": "27267dfda6b986c009d13e377c88a4b8fbea8fdd9be5b1500381718fc831363d",
+    "references/structure-guide.md": "d3a3a90ecd25a5ae408228755375ceb7c0fa16bfbeff29d11866fef2ba526f02",
+    "scripts/README.md": "9d2da0308c6149f80b93ab1bc824ff4b4b3beccff91431971b4808df8a7bed2b",
+    "scripts/search.py": "348208bc933ef87d3a78161e3103979fa6994c2e120a49757c3580a146c1e1da"
+   }
+  },
+  "story-and-shots": {
+   "source": "https://github.com/svenkatreddy/universal-video-skills",
+   "commit": "0c384d395290eaebf416e4bcfc4a7bb19b20aaac",
+   "license": "MIT",
+   "files": {
+    "LICENSE": "dbb3157c8ee4243696d46fc402a13aee1a70b88079a44de41ee133e027625517",
+    "SKILL.md": "5bc9523c4b2e789afaffaa8f56cbd5d9425cbe3def5d3f2dfd9120275bf50a9d",
+    "references/beats-and-shot-lists.md": "ab34315f88f26852d0cc81ea1d02a420abbac58a3f945b022166cc14beb984e8",
+    "references/quality-gates.md": "4b4a59d5db41ec28d8ab1bf7e2a6086a6a39e7b189adde8035e0f41443b3cc12",
+    "references/storyboard.md": "4dff093f7d5575312790f30c0102705b3234318fd525a46577d14b3037ab6d3e"
+   }
+  },
+  "video-prompt-craft": {
+   "source": "https://github.com/svenkatreddy/universal-video-skills",
+   "commit": "0c384d395290eaebf416e4bcfc4a7bb19b20aaac",
+   "license": "MIT",
+   "files": {
+    "LICENSE": "dbb3157c8ee4243696d46fc402a13aee1a70b88079a44de41ee133e027625517",
+    "SKILL.md": "b42a14ccee03dd16b46142bc330333f512e7a55db659ec2db07ab820395777d4",
+    "references/failure-modes.md": "4acefc7e37d098fe729a5b3bd146c5e3eb27683dcae5606b5ae7b413b129e335",
+    "references/i2v-prompting.md": "bcd3871b3803aaf56fdfa5d77d7b9d3e6e98994413283856eb33bc09340f9ea8",
+    "references/json-prompting.md": "49e02a3d2f4c474ce268692afa6722befe80f22880f43489c85ab8e9b8f4b2c1",
+    "references/negative-prompts.md": "c9e833cefd76810a17e0eb906280f0866c03c2e0120d70aeb3f57443801846f0",
+    "references/prompt-grammar.md": "2f5772e9898d3befb56b1eeb730cac4996e8d81fd66c637b0f2d101b2f8ac11d"
+   }
+  },
+  "video-qa": {
+   "source": "https://github.com/svenkatreddy/universal-video-skills",
+   "commit": "0c384d395290eaebf416e4bcfc4a7bb19b20aaac",
+   "license": "MIT",
+   "files": {
+    "LICENSE": "dbb3157c8ee4243696d46fc402a13aee1a70b88079a44de41ee133e027625517",
+    "SKILL.md": "4b2d530cdbd8bfc4d9b283e6055a2d715b5b3dff237d9c0904c55fcb2f38317e",
+    "references/automated-identity-qa.md": "3cf0e84d9e23ad23c6d53b0cffc729931884878711af185324c21cd8c1e7003e",
+    "references/continuity.md": "58b8827a4d1eb7dac04c1aa8aff3b320fc67a5a320a07edb3b1065a30325a9b4",
+    "references/failure-taxonomy.md": "d5da985c8e718e95be5cdcac56519d7b005cfff24e65f1420050064528519636",
+    "references/frame-evidence.md": "7473d77d987cb74f88d35590d4b8e61541a328722c8a2f41324822f43146906b",
+    "references/qa-checklist.md": "c7c7d430bc4bf5386b162962c12a1057db2f1576db37d43101a0ae4fb2020baf",
+    "scripts/contact_sheet.py": "1fdd0c742e6b57e62534fc4883596486ce9fdc56ba46e4c9543089853381e0c8",
+    "scripts/identity_score.py": "b4832da14e4399f52b5e750c016ea2f4f71076252281ea072c358f3fdd2add00"
+   }
+  }
+ }
+}
