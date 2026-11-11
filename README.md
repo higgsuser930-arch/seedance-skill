@@ -139,6 +139,44 @@ SKILL.md (467 lines, 19 KB)
 └── Quick Reference — Compressed format for character-limited surfaces
 ```
 
+## Unified Seedance Production Pack
+
+This repository also ships a project-level skill pack in `.claude/skills/`:
+twelve community skills vendored unmodified, plus one orchestration skill,
+`seedance-director`, that routes between them and settles their conflicts
+for Seedance 2.0 and 2.5.
+
+| Skill | Role |
+|---|---|
+| `seedance-director` | **Entry point.** Script analysis → direction → asset lock → generation plan → prompts → lint/QC → delivery. Separate 2.0 and 2.5 rules; T2V, I2V, first/last frame, R2V, V2V, edit, extend |
+| `seedance` | Seedance platform facts, @ syntax, templates (this repo's original skill) |
+| `seedance-forge` | Searchable corpus of 2,366 community Seedance 2.0 prompts |
+| `cinematic-director` | Script breakdown, beat map, blocking, shot lists, director lenses |
+| `ai-video-storyboard` | Multi-shot structure for social and ad formats |
+| `video-prompt-craft` | Shot-brief grammar, I2V subtraction, failure modes |
+| `cinematic-direction` | Camera, lighting, colour, style-lens vocabulary |
+| `story-and-shots` | Beats, shot lists, quality gates |
+| `character-consistency` | Asset registry and reference sheets |
+| `dialogue-and-audio` | Dialogue timing, voiceover, subtitles, mix |
+| `video-qa` | Clip review, failure taxonomy, contact sheets |
+| `assembly-and-delivery` | ffmpeg stitching and platform exports |
+| `model-adapters` | Adapter sheets for non-Seedance models |
+
+Claude Code loads `.claude/skills/` automatically when a session is opened in
+this repository. To use the pack elsewhere:
+
+```bash
+./scripts/install-skills.sh                   # -> ~/.claude/skills
+./scripts/install-skills.sh --project ~/film  # -> ~/film/.claude/skills
+python3 scripts/verify_skills.py              # structure, integrity, links, scripts
+```
+
+Start with `/seedance-director`, or just describe a scene and name the
+Seedance version. Conflict rulings between the skills, and the upstream
+skills that were deliberately left out, are in
+`.claude/skills/seedance-director/references/skill-map-and-conflicts.md`.
+Sources and licenses: `.claude/skills/THIRD_PARTY_NOTICES.md`.
+
 ## Example Output
 
 Given a product photo as `@Image1`, the skill produces prompts like:

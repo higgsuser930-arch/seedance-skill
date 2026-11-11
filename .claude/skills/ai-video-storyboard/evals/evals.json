@@ -1,0 +1,41 @@
+{
+  "skill_name": "ai-video-storyboard",
+  "evals": [
+    {
+      "id": "tiktok-30s-coffee-launch",
+      "prompt": "I'm opening a coffee shop and want a 30-second TikTok to announce it. Help me plan out the whole thing so the clips I generate look like they belong together.",
+      "expected_output": "A coordinated multi-shot storyboard: a brief intake, a shared Visual Theme block (palette, lighting, lens, film look, motion), roughly six ~5s shots each with composition/camera/lighting/subject/action plus a copy-ready cinematic prompt ending in 'cinematic 1080p, synchronized audio', a Hook/Build/Payoff/CTA arc, a post-production checklist, and a 'why this works' rationale.",
+      "files": [],
+      "expectations": [
+        "Asks brief-intake questions (goal/duration, subject, tone, CTA, constraints) or confirms them before producing shots",
+        "Divides the 30 seconds into roughly six ~5-second shots following a Hook -> Build -> Payoff -> CTA arc",
+        "Defines a shared visual-consistency layer (color palette, lighting, lens, film look, motion) applied across every shot",
+        "Produces copy-ready per-shot prompts that use 9:16 aspect ratio and end with 'cinematic 1080p, synchronized audio'"
+      ]
+    },
+    {
+      "id": "saas-explainer-90s",
+      "prompt": "We need a 90-second explainer video for our project-management SaaS. Each AI clip we can make is only about 5 seconds, so map out every segment from start to finish.",
+      "expected_output": "A full shot-list storyboard spanning ~18 segments of about 5 seconds, organized around a Problem -> Solution -> How it works -> Results -> CTA structure, with a locked Visual Theme reused across shots, concrete per-shot prompts, a post-production checklist, and creative rationale.",
+      "files": [],
+      "expectations": [
+        "Breaks the 90 seconds into roughly eighteen ~5-second shots rather than one prompt",
+        "Uses an explainer narrative structure (problem, solution, how it works, results, CTA)",
+        "Locks a shared visual language up front and enforces it in each shot's prompt",
+        "Includes a post-production / stitching checklist and explains why the shot order works"
+      ]
+    },
+    {
+      "id": "instagram-ad-15s-consistency",
+      "prompt": "Help me make a 15-second Instagram ad for my skincare serum. I keep generating clips one at a time and they look totally mismatched when I cut them together.",
+      "expected_output": "A short coordinated storyboard of about three ~5s shots following a Hook -> Product -> CTA cadence, anchored by a single Visual Theme (palette, lighting, lens, film look, motion) so the clips edit together, with concrete copy-ready prompts, an aspect-ratio/duration spec per shot, and post-production notes.",
+      "files": [],
+      "expectations": [
+        "Diagnoses the mismatch as a visual-consistency problem and establishes a shared Visual Theme to fix it",
+        "Plans roughly three ~5-second shots in a Hook -> Product -> CTA structure for the 15-second ad",
+        "Writes concrete, non-abstract per-shot prompts specifying duration and aspect ratio",
+        "Each shot prompt carries the same color palette, lighting, and film look to enforce edit-together consistency"
+      ]
+    }
+  ]
+}
