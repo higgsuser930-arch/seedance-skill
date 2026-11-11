@@ -151,6 +151,8 @@ refractions floating depth. Clean commercial tabletop, controlled reflections,
 no clutter. Gimbal-smooth motion. 4K sharp details.
 ```
 
+For a full worked example (storyboard, reference prompts and a 4-clip Seedance 2.5 shot script for a 30-second Instagram Reel, in Kazakh), see [examples/tassay-dolce-frutto-newton.md](examples/tassay-dolce-frutto-newton.md).
+
 ## Acknowledgments
 
 This skill synthesizes work from the following community projects:
