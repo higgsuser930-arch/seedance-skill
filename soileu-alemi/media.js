@@ -200,5 +200,5 @@ function camPanel({ small = false, onSnap } = {}) {
 function confetti(host) {
   const box = document.createElement('div'); box.className = 'confetti'; const cols = ['#ff6b6b', '#ffd23f', '#3ddc97', '#4dabf7', '#b18cff', '#ff9f43'];
   for (let i = 0; i < 36; i++) { const p = document.createElement('i'); p.style.left = Math.random() * 100 + '%'; p.style.background = cols[i % cols.length]; p.style.animationDelay = Math.random() * 0.3 + 's'; p.style.setProperty('--dx', (Math.random() * 120 - 60) + 'px'); box.appendChild(p); }
-  host.appendChild(box); setTimeout(() => box.remove(), 1800);
+  host.appendChild(box); setTimeout(() => box.remove(), 1800); document.dispatchEvent(new Event('sa-done'));
 }
