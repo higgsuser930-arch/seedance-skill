@@ -131,3 +131,5 @@ footer{margin-top:30px}.warn{background:#fff3cd;color:#5a4500;border-radius:16px
 @keyframes lick{0%,100%{transform:rotate(0)}50%{transform:rotate(180deg)}}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.01s!important}}
 @media print{header,nav,.tools,.btn,.tabs,footer .small,#app>.hero{display:none!important}body{background:#fff;color:#000}.panel{box-shadow:none;border:1px solid #ccc;break-inside:avoid}details:not([open]) *{display:none}}
+
+.navbar{margin:22px 0 0;text-align:center}.nextstage{background:var(--sens);box-shadow:0 5px 0 #0d7471;opacity:.55}.nextstage.ready{opacity:1;animation:pulse 1s infinite}

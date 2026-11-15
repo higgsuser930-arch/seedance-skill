@@ -284,13 +284,23 @@ function viewPrep() {
 function viewPrepItem(id) {
   const p = PREP.find(x => x.id === id); if (!p) return viewPrep();
   const body = h('div', {});
-  root.append(h('div', { class: 'crumb' }, h('a', { href: '#/prep' }, '← Дайындық')), h('div', { class: 'gh prep' }, h('h1', {}, p.e + ' ' + p.t), h('p', { class: 'vis' }, '🖼️ Көрнекілікке ұсыныс: ', p.d)), body);
+  const k = PREP.indexOf(p), nextP = PREP[k + 1];
+  PrepNav.tab = 0; PrepNav.count = 1; PrepNav.go = null;
+  const btn = h('button', { class: 'btn big nextstage' }), hint = h('div', { class: 'small center', style: 'text-align:center' }, 'Тапсырма орындалғанда бұл батырма жанып тұрады');
+  const refresh = () => { const more = PrepNav.tab < PrepNav.count - 1; btn.textContent = more ? 'Келесі тапсырма ➜' : (nextP ? 'Келесі кезеңге өту ➜' : 'Ойындарға өту ➜'); };
+  PrepNav.refresh = refresh;
+  btn.onclick = () => { if (PrepNav.tab < PrepNav.count - 1 && PrepNav.go) PrepNav.go(PrepNav.tab + 1); else location.hash = nextP ? '#/prep/' + nextP.id : '#/sens'; window.scrollTo(0, 0); };
+  const ready = () => { btn.classList.add('ready'); hint.textContent = 'Жарайсың! Келесіге өтуге болады 👇'; };
+  document.addEventListener('sa-done', ready); onLeave(() => document.removeEventListener('sa-done', ready));
+  root.append(h('div', { class: 'crumb' }, h('a', { href: '#/prep' }, '← Дайындық')), h('div', { class: 'gh prep' }, h('h1', {}, p.e + ' ' + p.t), h('p', { class: 'vis' }, '🖼️ Көрнекілікке ұсыныс: ', p.d)), body, h('div', { class: 'navbar' }, btn, hint));
   ({ breath: prepBreath, artic: prepArtic, voice: prepVoice, hear: prepHear, fine: prepFine, imit: prepImit })[id](body);
+  refresh();
 }
+const PrepNav = { tab: 0, count: 1, go: null, refresh() { } };
 function tabset(host, items, initial = 0) {
   const bar = h('div', { class: 'tabs' }), pane = h('div', { class: 'pane' }); let cl = null;
   items.forEach((it, k) => { const b = h('button', { class: 'tab', onclick: () => sel(k) }, it[0]); bar.append(b); it.b = b; });
-  function sel(k) { if (cl) { try { cl(); } catch (e) { } cl = null; } items.forEach((it, n) => it.b.classList.toggle('on', n === k)); pane.innerHTML = ''; const out = items[k][1](pane); if (typeof out === 'function') cl = out; }
+  function sel(k) { PrepNav.tab = k; PrepNav.count = items.length; PrepNav.go = sel; PrepNav.refresh(); const nb = document.querySelector('.nextstage'); if (nb) { nb.classList.remove('ready'); } if (cl) { try { cl(); } catch (e) { } cl = null; } items.forEach((it, n) => it.b.classList.toggle('on', n === k)); pane.innerHTML = ''; const out = items[k][1](pane); if (typeof out === 'function') cl = out; }
   host.append(bar, pane); onLeave(() => { if (cl) try { cl(); } catch (e) { } }); sel(initial);
 }
 function runSteps(pane, steps, id, title) {
@@ -373,7 +383,7 @@ function prepArtic(host) {
     main.innerHTML = ''; main.append(h('h2', {}, `«${a.t}»`), h('div', { class: 'artic' }, h('div', { class: 'demo', html: faceSVG(a.id) }), h('div', {}, h('p', { class: 'task' }, a.d), h('div', { class: 'row' }, h('button', { class: 'btn sm ghost', onclick: () => TTS.say(a.d) }, '🔊 Оқу')), num, bar, h('div', { class: 'row' }, bt),
       h('div', { class: 'row' }, h('button', { class: 'btn sm ghost', onclick: () => { cur = (cur + 1) % ARTIC.length; renderAll(); } }, 'Келесі жаттығу ➜')))));
   }
-  function renderAll() { renderList(); renderMain(); }
+  function renderAll() { PrepNav.tab = cur; PrepNav.count = ARTIC.length; PrepNav.go = k => { cur = k; renderAll(); }; PrepNav.refresh(); const nb = document.querySelector('.nextstage'); if (nb) nb.classList.remove('ready'); renderList(); renderMain(); }
   onLeave(() => clearInterval(timerId));
   host.append(h('p', { class: 'task' }, '📷 Камераны қосып, бала өзін айнадағыдай көреді: суреттегі қалыпты қайталап, санақ біткенше ұстап тұрады. «Сурет» батырмасы қалыпты түсіріп алады.'),
     h('div', { class: 'grid artgrid' }, h('div', {}, list), h('div', {}, main, h('div', { class: 'panel' }, h('h3', {}, '📷 Айна'), cam.el))));
